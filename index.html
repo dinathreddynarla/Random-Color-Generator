@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Generator</title>
+</head>
+<body>
+    <script>
+        var body = document.getElementsByTagName("body")[0];
+        body.style.display = "flex";
+        body.style.flexDirection = "column";
+        body.style.width = "98%";
+        body.style.height = "95vh";
+        body.style.justifyContent = "center";
+        body.style.alignItems = "center";
+        body.style.gap = "30px";
+
+        var h1 = document.createElement("h1");
+        h1.innerText = "Color Generator";
+        h1.style.fontSize = "40px";
+        document.body.appendChild(h1);
+
+        var cg = document.createElement("div");
+        cg.style.width = "50%";
+        cg.style.height = "50%";
+        cg.style.border = "3px solid black";
+        cg.style.backgroundColor = "white"; 
+        document.body.appendChild(cg);
+
+        var bt2 = document.createElement("button");
+        bt2.style.fontSize = "32px";
+        bt2.innerText = "Click Me";
+        bt2.addEventListener("click", changeColor);
+        document.body.appendChild(bt2);
+
+        /*function changeColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            cg.style.backgroundColor = color;
+            console.log(color)
+        }*/
+        function changeColor(){
+            r = Math.floor(Math.random() * 255)
+            g = Math.floor(Math.random() * 255)
+            b = Math.floor(Math.random() * 255)
+
+            console.log(r)
+            console.log(g)
+            console.log(b)
+
+            cg.style.backgroundColor=`rgb(${r},${g},${b})`;
+
+        }
+    </script>
+</body>
+</html>
